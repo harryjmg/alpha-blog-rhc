@@ -14,6 +14,7 @@
         <td><%= article.description %></td>
         <td><%= link_to "editer", edit_article_path(article) %></td>
         <td><%= link_to "afficher", article_path(article) %></td>
+        <td><%= link_to "supprimer", article_path(article), method: :delete %></td>
     </tr>
     <% end %>
     

@@ -1,11 +1,4 @@
-<% if @article.errors.any? %>
-    <h2>Erreur a cause des raisons suivantes :</h2>
-    <ul>
-    <% @article.errors.full_messages.each do |msg| %>
-        <li><%= msg %></li>
-    <% end %>
-    </ul>
-<% end %>
+<%= render 'shared/errors', obj: @article %>
 
 <div class="row">
     <%= form_for(@article, :html => {class: "form-horizontal", role: "form"}) do |f| %>

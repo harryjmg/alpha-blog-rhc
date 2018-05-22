@@ -1,6 +1,16 @@
-<h1><%= @article.title %></h1>
+<div class="row">
+    <div class="col-xs-offset-2 col-xs-10">
+        <h2><%= @article.title %></h2>
+        
+        <div class="well col-xs-6">
+            <%= @article.description %>
+            
+            <div class="article-actions">
+                <%= link_to "Editer cet article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
+                <%= link_to "Supprimer cet article", article_path(@article), method: :delete, class: "btn btn-xs btn-danger" %>
+                <%= link_to "Retour a la liste", articles_path, class: "btn btn-xs btn-success" %>
+            </div>
+        </div>
+    </div>
+</div>
 
-<p><%= @article.description %></p>
-
-<%= link_to "Retour a la liste", articles_path %> | 
-<%= link_to "Editer l'article", edit_article_path(@article) %>

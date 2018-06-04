@@ -13,7 +13,7 @@ class ApplicationController < ActionController::Base
   
   def require_user
       if not logged_in?
-          flash[:danger] = "Operation impossible si tu n'es pas connecté"
+          flash[:danger] = "Operation impossible si tu n'es pas connecté gros"
           redirect_to root_path
       end
   end

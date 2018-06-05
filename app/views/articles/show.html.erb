@@ -12,7 +12,7 @@
                 </div>
             <% end %>
             <div class="article-actions">
-                <% if logged_in? and current_user == @article.user %>
+                <% if logged_in? and (current_user == @article.user or current_user.admin?) %>
                     <%= link_to "Editer cet article", edit_article_path(@article), class: "btn btn-xs btn-primary" %>
                     <%= link_to "Supprimer cet article", article_path(@article), method: :delete, class: "btn btn-xs btn-danger" %>
                 <% end %>

@@ -15,7 +15,7 @@
         <td><%= truncate(article.description, length: 60) %></td>
         <td><small>Created by <strong><%= article.user.username if article.user %></strong> <%= time_ago_in_words(article.created_at) %> ago,
                         updated <%= time_ago_in_words(article.updated_at) %> ago</small></td>
-        <% if logged_in? and current_user == article.user %>
+        <% if logged_in? and (current_user == article.user or current_user.admin?) %>
             <td><%= link_to "Editer", edit_article_path(article), class: "btn btn-xs btn-primary" %></td>
             <td><%= link_to "Supprimer", article_path(article), method: :delete, class: "btn btn-xs btn-danger" %></td>
         <% end %>
